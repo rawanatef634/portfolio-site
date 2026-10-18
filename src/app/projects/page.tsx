@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { siteConfig } from "@/config/site";
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
               Projects built for real products and clients
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-foreground-muted">
-              Founder-built SaaS and commercial client work — shown as shipped,
+              Founder-built SaaS and commercial client work, shown as shipped,
               not mocked.
             </p>
           </div>

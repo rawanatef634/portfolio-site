@@ -18,7 +18,7 @@ type RevealProps = {
 };
 
 /**
- * Vertical scroll reveal only — keeps layout alignment stable.
+ * Vertical scroll reveal only. Keeps layout alignment stable.
  */
 export function Reveal({
   children,

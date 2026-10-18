@@ -1,6 +1,6 @@
 /**
  * Fixed-price packages shown on the homepage.
- * Prices are starting figures for clearly scoped delivery — custom / SaaS work
+ * Prices are starting figures for clearly scoped delivery. Custom / SaaS work
  * is confirmed in writing before kickoff.
  */
 export type ServicePackage = {
@@ -100,6 +100,6 @@ export const packageFaqs = [
   {
     question: "What if I need something custom?",
     answer:
-      "Email me a short brief. If it doesn’t fit a package, I’ll reply with a fixed quote — or say clearly when I’m not the right fit.",
+      "Email me a short brief. If it doesn’t fit a package, I’ll reply with a fixed quote, or say clearly when I’m not the right fit.",
   },
 ];

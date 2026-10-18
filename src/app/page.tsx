@@ -7,6 +7,7 @@ import { HeroStage } from "@/components/HeroStage";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { Reveal } from "@/components/Reveal";
 import { ServicePackages } from "@/components/ServicePackages";
+import { Testimonials } from "@/components/Testimonials";
 import { siteConfig } from "@/config/site";
 import { getFeaturedProjects, getVisibleProjects } from "@/lib/projects";
 
@@ -14,7 +15,7 @@ const reasons = [
   {
     title: "End-to-end ownership",
     description:
-      "From product definition to shipped UI and handoff notes — not just tickets in isolation.",
+      "From product definition to shipped UI and handoff notes, not just tickets in isolation.",
   },
   {
     title: "Live products, real constraints",
@@ -98,7 +99,7 @@ export default function HomePage() {
               Selected projects
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground-muted sm:text-base">
-              A focused look at live products — the full archive is on{" "}
+              A focused look at live products. The full archive is on{" "}
               <Link
                 href="/projects"
                 className="underline-grow text-foreground"
@@ -164,6 +165,27 @@ export default function HomePage() {
       </section>
 
       <section
+        aria-labelledby="testimonials-heading"
+        className="border-t border-border/60 py-28 sm:py-36"
+      >
+        <Container width="wide">
+          <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground-subtle">
+              Clients
+            </p>
+            <h2
+              id="testimonials-heading"
+              className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
+            >
+              What collaborators say
+            </h2>
+          </div>
+
+          <Testimonials />
+        </Container>
+      </section>
+
+      <section
         aria-labelledby="process-heading"
         className="ink-band py-28 sm:py-36"
       >
@@ -220,7 +242,7 @@ export default function HomePage() {
               Fixed-price ways to start
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground-muted sm:text-base">
-              Pick a package, email to order. Scope stays written — no surprise
+              Pick a package, email to order. Scope stays written, with no surprise
               invoices mid-build.
             </p>
           </div>
@@ -285,7 +307,7 @@ export default function HomePage() {
             </h2>
             <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-ink-fg/55">
               Share what you&apos;re building. I&apos;ll reply with a clear take
-              on fit, timing, and next steps — no fluff.
+              on fit, timing, and next steps. No fluff.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3.5">
               <ButtonLink
