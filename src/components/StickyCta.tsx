@@ -38,7 +38,7 @@ export function StickyCta() {
           tabIndex={visible ? 0 : -1}
           className="btn-primary inline-flex items-center gap-1 rounded-full bg-accent px-3.5 py-1.5 text-[13px] font-medium text-white transition-all hover:bg-accent-hover hover:-translate-y-px"
         >
-          Hire me
+          Discuss a project
           <ArrowUpRight className="size-3.5 opacity-80" aria-hidden="true" />
         </a>
       </div>

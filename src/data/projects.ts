@@ -45,13 +45,13 @@ export const projects: Project[] = [
     slug: "nebulacv",
     title: "NebulaCV",
     summary:
-      "An AI-powered career platform for software engineers spanning resume analysis, job matching, assessments, interview prep, and application tracking.",
+      "A career SaaS product for software engineers that brings resume analysis, job matching, assessments, interview prep, and application tracking into one workflow.",
     description:
-      "An AI-powered career platform for software engineers that brings together resume analysis, ATS-oriented feedback, job matching, career assessments, interview preparation, and application tracking.",
-    category: "Founder-built SaaS / AI Career Platform",
+      "A career platform for software engineers that connects resume analysis, ATS-oriented feedback, job matching, career assessments, interview preparation, and application tracking.",
+    category: "Founder-built SaaS / Career Platform",
     role: "Solo Founder & Full-Stack Developer",
     focus:
-      "End-to-end product development, SaaS architecture, user experience, and AI-supported workflows.",
+      "Product definition, full-stack implementation, and interconnected career workflows.",
     website: "https://nebulacv.com",
     featured: true,
     visible: true,
@@ -99,39 +99,39 @@ export const projects: Project[] = [
     ],
     caseStudy: {
       overview:
-        "NebulaCV is an independently developed SaaS product built to help software engineers manage career workflows in one place. The platform connects resume analysis, ATS-oriented feedback, job matching, career assessments, interview preparation, and application tracking into a coherent product experience.",
+        "NebulaCV is my independently built SaaS product for software engineers. It brings resume analysis, ATS-oriented feedback, job matching, career assessments, interview preparation, and application tracking into one product instead of a pile of disconnected tools.",
       problem:
-        "Career tools for engineers are often fragmented across resume checkers, job boards, assessment sites, and spreadsheets. That fragmentation makes it harder to get consistent feedback, track applications, and prepare for interviews in a single workflow.",
+        "Engineers usually juggle a resume checker, a job board, assessment sites, interview notes, and a spreadsheet for applications. Feedback and progress do not carry from one tool to the next, so preparation stays fragmented.",
       solution:
-        "NebulaCV unifies those steps into interconnected product flows: analyze and refine a resume, explore matching opportunities, complete career assessments, prepare for interviews, and track applications from one platform.",
+        "NebulaCV ties those steps into shared flows: refine a resume with grounded feedback, follow a phased capability path, explore matching opportunities, prepare for interviews, and track applications in one place.",
       contributions: [
-        "Defined product scope and prioritized interconnected career workflows",
-        "Designed and built the full-stack SaaS application end to end",
-        "Implemented AI-supported flows for resume analysis and career guidance",
-        "Shaped UX across resume, matching, assessment, interview, and tracking surfaces",
+        "Defined the product scope and the career workflows that needed to connect",
+        "Designed and built the full-stack application as solo founder",
+        "Implemented AI-supported resume analysis and career guidance flows",
+        "Shaped UX across dashboard, learning path, resume, matching, and tracking surfaces",
       ],
       // TODO: document confirmed stack (frameworks, hosting, AI providers) when ready for public listing
       technicalApproach:
-        "Built as a full-stack SaaS product with attention to modular feature areas, maintainable application structure, and workflows that share context across resume, matching, assessment, and tracking experiences.",
+        "Structured as a full-stack SaaS app with modular feature areas so resume, matching, assessment, and tracking can share context without becoming one fragile monolith.",
       outcome:
-        "Shipped a live founder-built product at nebulacv.com that demonstrates end-to-end SaaS development, from product definition through implementation of AI-supported career workflows.",
+        "A live product at nebulacv.com that demonstrates end-to-end SaaS ownership: product decisions, implementation, and a coherent career workflow for engineers.",
     },
   },
   {
     slug: "lockerroomors",
     title: "Lockerroomors",
     summary:
-      "A SportsTech platform helping athletes research clubs and leagues through player experiences and anonymous reviews.",
+      "A sports platform where athletes research clubs and leagues through player experiences and anonymous reviews. Built by substantially reworking an existing frontend and backend codebase, plus admin tools for day-to-day operations.",
     description:
       "A platform helping athletes research clubs and leagues through player experiences and anonymous reviews.",
-    category: "Client Project / SportsTech Platform",
-    role: "Web Developer",
+    category: "Client Project / Sports Platform",
+    role: "Full-Stack Developer",
     focus:
-      "Web application development, administrative workflows, and content-management functionality.",
+      "Frontend, backend, administrative workflows, and substantial rework of an existing codebase.",
     website: "https://lockerroomors.com",
     featured: true,
     visible: true,
-    tags: ["Client", "SportsTech", "Web App"],
+    tags: ["Client", "Sports", "Web App", "Full-Stack"],
     coverImage: {
       src: "/projects/lockerroomors-cover.png",
       alt: "Lockerroomors platform cover",
@@ -180,31 +180,32 @@ export const projects: Project[] = [
     ],
     caseStudy: {
       overview:
-        "Lockerroomors is a commercial SportsTech platform that helps athletes evaluate clubs and leagues using firsthand player experiences and anonymous reviews. The engagement focused on reliable web application delivery for a client product.",
+        "Lockerroomors is a sports platform where athletes research clubs and leagues through player experiences and anonymous reviews. I joined an existing codebase and rebuilt most of it (frontend and backend) into the live product athletes and admins use today.",
       problem:
-        "Athletes often lack structured, peer-sourced information when evaluating clubs and leagues. Without a clear place for experiences and reviews, research stays informal and hard to compare.",
+        "Choosing a club or league often depends on word of mouth. Without structured, peer-sourced reviews, athletes have little comparable information, and the team behind the product needs reliable tools to manage content and operations.",
       solution:
-        "The platform centralizes player experiences and anonymous reviews so athletes can research clubs and leagues more confidently, supported by administrative tooling for content and operations.",
+        "The live product lets athletes browse teams and leagues, submit multi-step reviews, and explore related flows such as referral rewards, while admin tooling supports day-to-day content and operations, backed by application logic I reworked on the server side as well as the client.",
       contributions: [
-        "Developed web application features for the client platform",
-        "Built and refined administrative workflows for day-to-day operations",
+        "Took over an existing codebase and reworked most of the application end to end",
+        "Built and extended backend logic supporting core platform workflows",
+        "Built and refined athlete-facing web application features",
+        "Developed administrative workflows used for day-to-day operations",
         "Implemented content-management functionality supporting reviews and platform content",
-        "Delivered commercial client work aligned with product and stakeholder needs",
       ],
-      // TODO: add confirmed technologies used on the engagement when cleared for public disclosure
+      // TODO: list confirmed technologies if cleared for public disclosure
       technicalApproach:
-        "Focused on practical web application development with clear administrative surfaces and content-management flows suitable for an evolving client product.",
+        "Full-stack work on a client-owned codebase: reshaping frontend flows and backend behavior so athlete research, reviews, and admin operations share a coherent, maintainable foundation rather than patching around the original structure.",
       outcome:
-        "Supported delivery of a live client platform at lockerroomors.com with public athlete-facing experiences and administrative tooling for content and operations.",
+        "A live platform at lockerroomors.com shaped largely through a deep rewrite of the prior codebase, spanning frontend, backend, and admin tooling. Not a greenfield build claimed as sole authorship of every historical decision.",
     },
   },
   {
     slug: "sm-studios",
     title: "SM Studios",
     summary:
-      "A professional web presence for an architecture and interior design studio in Oman, focused on portfolio presentation and responsive experience.",
+      "A website for an architecture and interior design studio in Oman, built to present the practice and its work clearly across devices.",
     description:
-      "A professional web presence for an architecture and interior design studio based in Oman, emphasizing portfolio presentation, visual identity, and responsive user experience.",
+      "A professional web presence for an architecture and interior design studio based in Oman, emphasizing portfolio presentation, visual identity, and responsive browsing.",
     category: "Client Project / Architecture & Interior Design",
     role: "Web Developer",
     focus:
@@ -246,35 +247,34 @@ export const projects: Project[] = [
     ],
     caseStudy: {
       overview:
-        "SM Studios needed a professional online presence that presented architecture and interior design work clearly, reflected the studio’s visual identity, and worked well across devices.",
+        "SM Studios is an architecture and interior design practice in Oman. They needed a website that presented the studio and its projects clearly, matched how they want to be seen, and worked well on phone and desktop.",
       problem:
-        "Design-led studios rely on presentation quality. A weak or inconsistent website makes it harder to communicate craft, project range, and professionalism to prospective clients.",
+        "Prospective clients judge a design studio partly by how its work is shown online. A generic or inconsistent site undercuts the portfolio and makes it harder to understand services such as interior design, architecture, and fit-outs.",
       solution:
-        "Delivered a responsive marketing website centered on portfolio presentation, visual identity, and a clean browsing experience suited to an architecture and interior design practice.",
+        "A responsive marketing site organized around expertise areas, project imagery, and a straightforward path to contact, with layout and presentation tuned to the studio’s visual identity.",
       contributions: [
         "Implemented the responsive website across key breakpoints",
-        "Translated visual identity into a coherent interface",
-        "Focused on clear portfolio presentation and navigation",
-        "Delivered a polished commercial site for a design-focused business",
+        "Translated the studio’s visual identity into a coherent interface",
+        "Structured portfolio and service sections so projects and expertise are easy to browse",
       ],
       // TODO: note confirmed implementation stack if desired
       technicalApproach:
-        "Prioritized responsive layout, performance-conscious front-end implementation, and careful visual presentation so project imagery and studio identity remain the focus.",
+        "Prioritized responsive layout, careful typography, and image-led presentation so the work stays front and center rather than the chrome around it.",
       outcome:
-        "Launched a live studio website at smstudios-om.com that presents the practice professionally with a responsive, portfolio-forward experience.",
+        "A live studio site at smstudios-om.com that presents SM Studios and its projects clearly on desktop and mobile.",
     },
   },
   {
     slug: "ncc",
     title: "NCC X-Calibur",
     summary:
-      "A commercial website for an Egyptian construction-chemicals company, presenting products, project work, and company information.",
+      "Commercial website work for NCC X-Calibur, an Egyptian construction-chemicals company, helping present products, project references, and company information to buyers and partners.",
     description:
       "Web presence for NCC X-Calibur (ncc.com.eg), a construction chemicals company based in New Cairo, Egypt, covering product solutions, project references, and company information for clients and partners.",
     category: "Client Project / Construction Chemicals",
-    role: "Web Developer",
+    role: "Web Developer (contributing)",
     focus:
-      "Commercial website development, product-oriented content structure, and clear presentation of company offerings.",
+      "Commercial website contribution: product-oriented content structure and clear presentation of company offerings.",
     website: "https://ncc.com.eg",
     featured: false,
     visible: true,
@@ -317,38 +317,38 @@ export const projects: Project[] = [
     ],
     caseStudy: {
       overview:
-        "NCC X-Calibur is a construction chemicals company specializing in concrete and building solutions such as waterproofing, flooring, repair systems, and protective coatings. The website at ncc.com.eg presents the company’s products, selected projects, and contact pathways for clients across Egypt.",
+        "NCC X-Calibur is a construction-chemicals company in Egypt offering concrete and building solutions such as waterproofing, flooring, repair systems, and protective coatings. I contributed as a web developer on the commercial site at ncc.com.eg; this case study describes the live product and my documented contribution, not sole ownership of the entire website.",
       problem:
-        "Industrial and B2B product companies need a clear digital presence so buyers can understand offerings, review relevant project context, and reach the right contacts, without relying only on offline sales conversations.",
+        "B2B buyers need to understand product categories, see relevant project context, and find a contact path without depending only on offline sales conversations.",
       solution:
-        "A structured commercial website that organizes construction-chemical products and company information into an accessible public experience, with pathways to explore solutions and get in touch.",
-      // TODO: refine contributions once your exact scope on the engagement is confirmed
+        "The live site organizes product categories, product detail pages, featured projects, insights, and contact information into a public commercial experience.",
+      // TODO: confirm exact pages/features you owned with John (PM) before stronger ownership claims
       contributions: [
-        "Supported development of the commercial website experience",
+        "Contributed web development on the commercial website",
         "Helped structure product- and company-oriented content for clearer browsing",
         "Implemented interface work suited to an industrial B2B brand",
       ],
       // TODO: add confirmed stack when ready for public disclosure
       technicalApproach:
-        "Focused on clear information architecture and responsive front-end presentation so product categories, project references, and contact details remain easy to find on desktop and mobile.",
+        "Focused on clear information architecture and responsive front-end presentation so product categories, project references, and contact details stay easy to find.",
       outcome:
-        "A live company website at ncc.com.eg that presents NCC X-Calibur’s construction-chemical offerings and project context to prospective clients.",
+        "A live company website at ncc.com.eg. Visitors can explore construction-chemical offerings and project context; my role was contributing development work on that experience, not building every part independently.",
     },
   },
   {
     slug: "fixora",
     title: "Fixora",
     summary:
-      "Case study coming soon. Placeholder reserved for a product I’ll publish here once the site and write-up are ready.",
+      "A home-services product in development. Case study reserved until the product is ready to share.",
     description:
       "Fixora is a forthcoming project entry. Full case-study details, live URL, and screenshots will be added when the product is ready to share.",
     category: "Product · Coming Soon",
     role: "Builder",
     focus: "Details forthcoming.",
-    // TODO: set website when Fixora has a public URL, e.g. "https://fixora.example"
+    // TODO: set website when Fixora has a public URL
     website: undefined,
     featured: false,
-    visible: true,
+    visible: false,
     comingSoon: true,
     tags: ["Coming Soon"],
     coverImage: {

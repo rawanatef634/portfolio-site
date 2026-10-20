@@ -221,18 +221,18 @@ async function CaseStudyContent({
               Next step
             </p>
             <h2 className="mt-2 font-display text-2xl sm:text-3xl">
-              Want something like this?
+              Need something in this direction?
             </h2>
             <p className="mt-3 text-base text-foreground-muted">
-              Tell me what you&apos;re building. I&apos;ll reply with a clear
-              take on scope and fit.
+              Tell me what you are building. I will reply with a clear take on
+              scope and fit.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
                 href={`mailto:${siteConfig.email}?subject=Project inquiry`}
                 className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover"
               >
-                Email Rawan
+                Discuss a project
               </Link>
               <Link
                 href="/#contact"

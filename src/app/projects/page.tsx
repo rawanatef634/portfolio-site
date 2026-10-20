@@ -27,11 +27,11 @@ export default function ProjectsPage() {
               Work
             </p>
             <h1 className="mt-5 font-display text-4xl text-balance sm:text-5xl md:text-6xl">
-              Projects built for real products and clients
+              Work for real products and businesses
             </h1>
             <p className="mx-auto mt-6 max-w-lg text-base leading-relaxed text-foreground-muted">
-              Founder-built SaaS and commercial client work, shown as shipped,
-              not mocked.
+              Founder-built SaaS and client projects that are live, with case
+              studies focused on the problem and what was actually built.
             </p>
           </div>
         </Container>

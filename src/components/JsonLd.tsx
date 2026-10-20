@@ -8,7 +8,8 @@ export function PersonJsonLd() {
     jobTitle: siteConfig.title,
     url: siteConfig.url,
     email: siteConfig.email,
-    sameAs: [siteConfig.linkedIn],
+    telephone: siteConfig.phone,
+    sameAs: [siteConfig.linkedIn, siteConfig.whatsAppUrl],
     description: siteConfig.description,
     ...(siteConfig.location ? { address: { "@type": "PostalAddress", addressLocality: siteConfig.location } } : {}),
   };

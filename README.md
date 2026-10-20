@@ -48,8 +48,14 @@ Edit [`src/config/site.ts`](src/config/site.ts):
 Set the canonical origin in `.env.local` (and in Vercel):
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+# Local
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Production (Vercel Environment Variable)
+NEXT_PUBLIC_SITE_URL=https://rawanatef.me
 ```
+
+Primary public domain: [https://rawanatef.me](https://rawanatef.me).
 
 ### 3. Project content
 
@@ -77,8 +83,9 @@ SEO includes page metadata, Open Graph tags, `sitemap.xml`, `robots.txt`, canoni
 
 1. Push this repository to GitHub (or import the local folder in Vercel).
 2. Create a new Vercel project from the repo.
-3. Set `NEXT_PUBLIC_SITE_URL` to your production domain (no trailing slash).
-4. Deploy.
+3. Set `NEXT_PUBLIC_SITE_URL=https://rawanatef.me` (Production environment, no trailing slash).
+4. Add custom domains `rawanatef.me` and `www.rawanatef.me` in the Vercel project, then apply the DNS records Vercel shows.
+5. Deploy.
 
 Vercel detects Next.js automatically. No special build settings are required.
 

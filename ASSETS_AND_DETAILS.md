@@ -6,33 +6,36 @@ Use this checklist before publishing. Nothing here invents credentials, metrics,
 
 Update in `src/config/site.ts` (and `.env.local` / Vercel for the URL):
 
-- [ ] Real display name (replace `[YOUR NAME]`)
-- [ ] Professional email (replace `hello@example.com`)
-- [ ] LinkedIn profile URL
-- [ ] Production site URL via `NEXT_PUBLIC_SITE_URL`
-- [ ] Availability toggle (`availability.show`) and message when you want it public
+- [x] Real display name
+- [x] Professional email
+- [x] LinkedIn profile URL
+- [x] Production site URL via `NEXT_PUBLIC_SITE_URL` → `https://rawanatef.me` (set in Vercel Production)
+- [x] Availability toggle (`availability.show`) and message when you want it public
 - [ ] Optional location string
 
-## Required project screenshots
+## Project screenshots
 
-Add image files to **`public/projects/`** (PNG is fine):
+Files live in **`public/projects/`**. Covers and galleries are wired in `src/data/projects.ts`.
 
-- [x] `nebulacv-cover.png`
-- [ ] `nebulacv-dashboard.png` (optional gallery)
-- [x] `lockerroomors-cover.png`
-- [ ] `lockerroomors-admin.png` (optional gallery)
-- [x] `smstudios-cover.png`
-- [x] `ncc-cover.png`
+- [x] NebulaCV cover + gallery
+- [x] Lockerroomors cover + gallery
+- [x] SM Studios cover + gallery
+- [x] NCC X-Calibur cover + gallery
+- [ ] `fixora-cover.png` when Fixora is ready (`visible: false` until then)
 
-Optional / later:
+Several PNGs are still large (1MB+). Prefer compressing before deploy if LCP feels slow; Next.js Image already serves resized variants.
 
-- [ ] `fixora-cover.png` (Fixora is a visible placeholder until you fill it in)
+## Testimonials (`src/data/testimonials.ts`)
 
-Recommended: **16:10** aspect ratio when possible. Compress large PNGs if the page feels slow.
+Only entries with `approved: true` and a non-empty `quote` publish. Flip `approved` in that one file after written client confirmation.
+
+- [x] **Mohamed Al Habsi / SM Studios** — client-approved wording published (`approved: true`); no invented job title
+- [x] **John / Product Manager, NCC X-Calibur** — client-approved wording published (`approved: true`); no invented surname
+- [x] **Danielle Sullivan / Lockerroomors** — client-provided wording published (`approved: true`)
 
 ## Optional factual content to strengthen case studies
 
-Add only what you can verify. Leave blank or keep neutral otherwise.
+Add only what you can verify.
 
 ### NebulaCV
 
@@ -41,34 +44,35 @@ Add only what you can verify. Leave blank or keep neutral otherwise.
 
 ### Lockerroomors
 
-- [ ] Confirmed technologies used on the engagement (if cleared for disclosure)
-- [ ] Any additional verified responsibilities
+- [ ] Confirmed technologies used (if cleared for disclosure)
+- [ ] Exact feature ownership with Danielle before stronger claims
 
 ### SM Studios
 
-- [ ] Confirmed implementation details if desired
-- [ ] Additional screenshots for the gallery
+- [ ] Confirmed implementation stack if desired
 
 ### NCC X-Calibur (ncc.com.eg)
 
-- [ ] Confirm your exact role/scope on the engagement
+- [ ] Confirm exact role/scope with John (PM) before stronger ownership claims
 - [ ] Confirmed tech stack if you want it listed
-- [ ] Extra gallery screenshots if desired
 
 ### Fixora
 
-Already visible as a **coming soon** placeholder (`comingSoon: true` in `src/data/projects.ts`).
+Hidden while in development (`visible: false` in `src/data/projects.ts`).
 
 When ready:
 
-- [ ] Set `comingSoon: false`
+- [ ] Set `visible: true` and `comingSoon: false`
 - [ ] Add `website` URL
 - [ ] Write the full case study
 - [ ] Add `fixora-cover.png`
 - [ ] Do **not** claim launch or revenue unless true
 
-## Branding / SEO polish (optional)
+## Branding / SEO / commercial
 
-- [ ] Replace default `src/app/favicon.ico`
-- [ ] Add Open Graph image (e.g. `public/og.png`) and reference it in metadata
-- [ ] Proofread all copy for voice and accuracy
+- [x] Favicon (`src/app/favicon.ico`)
+- [x] Open Graph image (`src/app/opengraph-image.tsx`)
+- [x] Confirm Vercel Production env `NEXT_PUBLIC_SITE_URL=https://rawanatef.me`
+- [ ] DNS for rawanatef.me (nameservers still on Namecheap registrar; point to Vercel or apply Vercel A/CNAME records)
+- [x] Confirm package prices and payment terms in `src/data/packages.ts` (Launch $999 · Sprint $2,900 · Custom from $5,900; 40% deposit)
+- [ ] Optional location string in `src/config/site.ts`

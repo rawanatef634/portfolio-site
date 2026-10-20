@@ -116,7 +116,7 @@ function ProjectCover({
         alt={project.coverImage.alt}
         width={1910}
         height={860}
-        quality={95}
+        quality={85}
         sizes={sizes}
         className="h-auto w-full"
         priority={priority}
@@ -145,7 +145,7 @@ export function ProjectShowcase({
             sizes="(min-width: 1400px) 1200px, 92vw"
           />
           <p className="mx-auto mt-7 max-w-2xl text-center text-[15px] leading-relaxed text-foreground-muted sm:mt-8 sm:text-base">
-            {lead!.comingSoon ? lead!.summary : lead!.caseStudy.outcome}
+            {lead!.summary}
           </p>
         </Reveal>
 
@@ -161,9 +161,7 @@ export function ProjectShowcase({
                   sizes="(min-width: 1024px) 560px, 92vw"
                 />
                 <p className="mt-5 flex-1 text-[14px] leading-relaxed text-foreground-muted sm:text-[15px]">
-                  {project.comingSoon
-                    ? project.summary
-                    : project.caseStudy.outcome}
+                  {project.summary}
                 </p>
               </article>
             </Reveal>
@@ -187,9 +185,7 @@ export function ProjectShowcase({
               sizes="(min-width: 1400px) 1200px, 92vw"
             />
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-foreground-muted sm:mt-7 sm:text-base">
-              {project.comingSoon
-                ? project.summary
-                : project.caseStudy.outcome}
+              {project.summary}
             </p>
           </article>
         </Reveal>

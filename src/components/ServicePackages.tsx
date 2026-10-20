@@ -33,7 +33,7 @@ export function ServicePackages() {
               </p>
               {pkg.featured ? (
                 <span className="rounded-full bg-ink px-2.5 py-1 text-[11px] font-medium tracking-wide text-ink-fg">
-                  Most booked
+                  Often a good fit
                 </span>
               ) : null}
             </div>
@@ -82,7 +82,7 @@ export function ServicePackages() {
                 variant={pkg.featured ? "primary" : "secondary"}
                 className="w-full"
               >
-                Order {pkg.name}
+                Inquire about {pkg.name}
                 <ArrowUpRight className="size-3.5" aria-hidden />
               </ButtonLink>
             </div>
@@ -90,7 +90,7 @@ export function ServicePackages() {
         ))}
       </ul>
 
-      <div className="mt-16 grid gap-8 border-t border-border/60 pt-12 sm:mt-20 sm:grid-cols-3 sm:gap-10 sm:pt-14">
+      <div className="mt-16 grid gap-8 border-t border-border/60 pt-12 sm:mt-20 sm:grid-cols-2 sm:gap-10 sm:pt-14 lg:grid-cols-3">
         {packageFaqs.map((faq, index) => (
           <Reveal key={faq.question} as="div" delay={index * 40}>
             <h4 className="text-[15px] font-medium text-foreground">

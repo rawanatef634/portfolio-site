@@ -50,7 +50,7 @@ export function ProjectMedia({
         alt={image.alt}
         width={1920}
         height={870}
-        quality={95}
+        quality={85}
         priority={priority}
         sizes={sizes}
         className="h-auto w-full"

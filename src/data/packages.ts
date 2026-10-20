@@ -1,7 +1,9 @@
 /**
- * Fixed-price packages shown on the homepage.
- * Prices are starting figures for clearly scoped delivery. Custom / SaaS work
- * is confirmed in writing before kickoff.
+ * Service packages shown on the homepage.
+ * Prices are provisional starting figures for clearly scoped delivery.
+ * Custom / larger product work is confirmed in writing before kickoff.
+ *
+ * Do not change prices or payment terms without Rawan's approval.
  */
 export type ServicePackage = {
   id: string;
@@ -20,66 +22,75 @@ export const servicePackages: ServicePackage[] = [
   {
     id: "launch-site",
     name: "Launch Site",
-    tagline: "A polished marketing site that looks credible and converts.",
+    tagline:
+      "A professional marketing site for a studio or small business: who you are, what you offer, and how to inquire.",
     price: "$999",
-    priceNote: "fixed",
-    timeline: "2–3 weeks",
-    bestFor: "Studios, local businesses, and product landing pages",
+    priceNote: "fixed once scoped",
+    timeline: "2–3 weeks with complete content and assets",
+    bestFor: "Studios, local businesses, and simple product landing pages",
     includes: [
-      "Up to 6 pages · responsive Next.js build",
-      "Contact / inquiry flow wired to your inbox",
-      "SEO basics · metadata, sitemap, share image",
-      "Analytics setup (GA4)",
-      "2 revision rounds + 14-day fix window",
-      "Source handoff on final payment",
+      "Up to 4 standard pages on a responsive Next.js site",
+      "Contact / inquiry flow to your inbox",
+      "On-page SEO basics: metadata, sitemap, and share preview",
+      "Deployment setup",
+      "2 revision rounds + 14-day post-delivery fix window",
+      "Source-code handoff on final payment (per contract)",
     ],
     excludes: [
-      "Custom illustrations or brand identity from scratch",
-      "CMS / blog (available as an add-on)",
+      "CMS / blog",
+      "Ecommerce or booking systems",
+      "Custom backend work",
+      "Brand identity or copy from scratch",
       "Domain and hosting fees",
+      "Ongoing maintenance or content writing",
     ],
   },
   {
     id: "product-sprint",
     name: "Product Sprint",
-    tagline: "A focused web app, dashboard, or internal tool you can use.",
+    tagline:
+      "One clearly defined product workflow or module: an admin feature, portal flow, or API-backed slice, not a complete SaaS or MVP.",
     price: "$2,900",
-    priceNote: "fixed",
-    timeline: "4–6 weeks",
-    bestFor: "Ops tools, client portals, and feature-ready web apps",
+    priceNote: "fixed once scoped",
+    timeline: "4–6 weeks after written scope",
+    bestFor: "Ops tools, client portals, and narrowly scoped web apps",
     featured: true,
     includes: [
-      "Scoped feature set agreed in writing first",
-      "Auth + core CRUD flows where needed",
-      "Clean UI with responsive layouts",
-      "Deployed staging + production setup",
-      "2 revision rounds + 30-day fix window",
-      "Repo access and handoff notes",
+      "Written scope before kickoff (features in, features out)",
+      "The agreed workflow only; auth and integrations when written into scope",
+      "Clear UI with responsive layouts",
+      "Deployed staging and production setup",
+      "2 revision rounds + 30-day post-delivery fix window",
+      "Repo access and handoff notes on final payment (per contract)",
     ],
     excludes: [
-      "Open-ended product discovery without a scope call",
+      "A complete SaaS product or open-ended MVP",
+      "Open-ended discovery without a scope call",
       "Native mobile apps",
+      "Features added mid-sprint without a change order",
       "Ongoing retainer (quoted separately)",
     ],
   },
   {
-    id: "saas-mvp",
-    name: "SaaS MVP",
-    tagline: "A production-minded MVP foundation for early users.",
-    price: "From $5,900",
-    priceNote: "quoted after scope",
-    timeline: "6–10 weeks",
-    bestFor: "Founders validating a multi-user product",
+    id: "custom-build",
+    name: "Custom Build",
+    tagline:
+      "A custom-scoped engagement or defined first development phase. The starting figure is a floor; the final quote depends on requirements.",
+    price: "Starting from $5,900",
+    priceNote: "quoted after a scope call",
+    timeline: "typically 6–10+ weeks",
+    bestFor: "Founders and teams with a defined need beyond a single sprint",
     includes: [
-      "Core user journeys + admin surface",
-      "Auth, data model, and billing hooks if needed",
-      "Ship-ready deploy pipeline",
-      "Milestone reviews you can steer",
-      "30-day post-launch fix window",
-      "Full source ownership",
+      "Scope workshop and a fixed quote before kickoff",
+      "Core user journeys agreed in writing (not an open backlog)",
+      "Auth, data model, and integrations called out in the quote",
+      "Milestone reviews so you can steer as we build",
+      "30-day post-delivery fix window on delivered scope",
+      "Source ownership transfer on final payment (per contract)",
     ],
     excludes: [
-      "Unbounded feature lists (scoped before kickoff)",
+      "Unlimited features for the starting price",
+      "A complete marketplace or full SaaS assumed at $5,900",
       "Marketing campaign management",
       "Third-party SaaS subscription costs",
     ],
@@ -88,18 +99,28 @@ export const servicePackages: ServicePackage[] = [
 
 export const packageFaqs = [
   {
-    question: "Is the price really fixed?",
+    question: "Are these prices fixed?",
     answer:
-      "Yes for Launch Site and Product Sprint once scope is written. SaaS MVP starts from the listed figure and locks a fixed quote after a short scope call.",
+      "Launch Site and Product Sprint are fixed once we write the scope down. Custom Build starts from the listed figure; the final price is a fixed quote after a short scope call, based on features, integrations, and timeline. A complete marketplace or SaaS is quoted separately, not assumed at the starting price.",
   },
   {
     question: "How do payments work?",
     answer:
-      "Typically 40% to start and the balance on delivery milestones. Invoices in USD via bank transfer, Wise, or similar.",
+      "Typically 40% to start and the balance on delivery milestones. Invoices in USD.",
   },
   {
-    question: "What if I need something custom?",
+    question: "What does the fix window cover?",
     answer:
-      "Email me a short brief. If it doesn’t fit a package, I’ll reply with a fixed quote, or say clearly when I’m not the right fit.",
+      "Corrections to defects within the agreed, delivered scope. It does not cover new requirements, design changes outside scope, or issues caused by third-party services or later changes you make.",
+  },
+  {
+    question: "When do I get the source code?",
+    answer:
+      "Source-code handoff and ownership transfer follow the signed contract and are completed after final payment.",
+  },
+  {
+    question: "What if my project does not fit a package?",
+    answer:
+      "Email a short brief. If it does not fit, I will reply with a fixed quote, or say clearly when I am not the right fit.",
   },
 ];

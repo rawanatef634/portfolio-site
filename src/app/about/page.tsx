@@ -8,97 +8,118 @@ import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `About ${siteConfig.name} · full-stack software engineer building SaaS products, internal tools, and commercial websites.`,
+  description: `About ${siteConfig.name} · full-stack developer building SaaS products, internal tools, and business websites.`,
   alternates: { canonical: "/about" },
   openGraph: {
     title: `About · ${siteConfig.name}`,
-    description: `About ${siteConfig.name} · full-stack software engineer building SaaS products, internal tools, and commercial websites.`,
+    description: `About ${siteConfig.name} · full-stack developer building SaaS products, internal tools, and business websites.`,
     url: `${siteConfig.url}/about`,
   },
 };
 
 const specializations = [
-  "Full-stack web application development",
-  "SaaS product architecture and MVP delivery",
-  "Admin dashboards and internal tooling",
-  "API integrations and feature development",
-  "Responsive commercial websites",
+  {
+    title: "SaaS & product development",
+    detail:
+      "Turn requirements into usable features and leave a foundation that can grow with the product.",
+  },
+  {
+    title: "Dashboards & internal tools",
+    detail:
+      "Simplify complicated workflows so teams spend less time wrestling with spreadsheets and manual process.",
+  },
+  {
+    title: "Business websites",
+    detail:
+      "Present a company clearly, show the work that matters, and make contact straightforward.",
+  },
+  {
+    title: "App improvements & integrations",
+    detail:
+      "Improve existing React or Next.js applications and connect the APIs your operations depend on.",
+  },
 ] as const;
 
 const experienceHighlights = [
   {
     title: "NebulaCV",
     detail:
-      "Independently developing an AI-powered career SaaS platform for software engineers, covering product definition, full-stack implementation, and interconnected workflows.",
+      "Independently building a career SaaS product for software engineers, from product definition through full-stack implementation of interconnected workflows.",
   },
   {
     title: "Lockerroomors",
     detail:
-      "Web development for a SportsTech client platform, including administrative workflows and content-management functionality.",
+      "Full-stack work on a sports platform: reworked most of an existing codebase across frontend, backend, athlete-facing features, and admin workflows.",
   },
   {
     title: "SM Studios",
     detail:
-      "Responsive website development for an architecture and interior design studio, with emphasis on portfolio presentation and visual identity.",
+      "Responsive website for an architecture and interior design studio in Oman, focused on clear portfolio presentation.",
   },
   {
     title: "NCC X-Calibur",
     detail:
-      "Commercial website work for an Egyptian construction-chemicals company, presenting products, projects, and company information at ncc.com.eg.",
+      "Commercial website work for a construction-chemicals company in Egypt, organizing products, projects, and company information.",
   },
 ] as const;
 
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 sm:pt-40">
-        <Container className="pb-20 sm:pb-28">
+      <section className="pt-28 sm:pt-32">
+        <Container className="pb-14 sm:pb-20">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-foreground-subtle">
               About
             </p>
             <h1 className="mt-5 font-display text-4xl text-balance sm:text-5xl md:text-6xl">
-              Full-stack engineer with a product orientation
+              A developer who starts from what your business needs to work
             </h1>
             <p className="mt-7 text-base leading-relaxed text-foreground-muted sm:text-lg">
-              I help founders, businesses, and agencies turn ideas into
-              reliable software.
+              I help founders and business owners turn real requirements into
+              SaaS features, dashboards, and websites they can use, maintain,
+              and extend.
             </p>
           </div>
         </Container>
       </section>
 
-      <section className="border-y border-border/70 py-24 sm:py-32">
+      <section className="border-y border-border/70 py-14 sm:py-20">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-10">
             <h2 className="font-display text-2xl sm:text-3xl lg:col-span-4">
-              How I work
+              How I approach client work
             </h2>
             <div className="space-y-4 text-base leading-relaxed text-foreground-muted lg:col-span-7 lg:col-start-6">
               <p>
-                I work across the stack on SaaS platforms, web applications,
-                dashboards, and commercial websites · including client delivery
-                and a SaaS product built end to end.
+                Good software starts with a clear problem. I ask questions that
+                surface constraints early, translate requirements into a
+                realistic plan, and make technical decisions with maintenance in
+                mind, not just the first demo.
               </p>
               <p>
-                I prefer clear problem framing, maintainable architecture, and
-                interfaces people can actually use.
+                That usually means shipping polished, responsive interfaces,
+                simplifying workflows that get in people&apos;s way, and
+                improving existing applications when a full rewrite is not the
+                responsible choice.
               </p>
-              {siteConfig.location ? <p>Based in {siteConfig.location}.</p> : null}
+              {siteConfig.location ? (
+                <p>Based in {siteConfig.location}.</p>
+              ) : null}
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="py-24 sm:py-32">
+      <section className="py-14 sm:py-20">
         <Container>
-          <div className="mb-12 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-8 flex flex-col gap-5 sm:mb-9 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-foreground-subtle">
                 Focus
               </p>
               <h2 className="mt-3 font-display text-3xl">
-                Specializations
+                Where I am most useful
               </h2>
             </div>
             <Link
@@ -112,34 +133,39 @@ export default function AboutPage() {
           <ul className="divide-y divide-border/80 border-y border-border/80">
             {specializations.map((item, index) => (
               <li
-                key={item}
-                className="flex items-baseline gap-5 py-7 sm:gap-8 sm:py-8"
+                key={item.title}
+                className="grid gap-3 py-6 sm:grid-cols-[auto_1fr] sm:items-baseline sm:gap-8 sm:py-8"
               >
                 <span className="w-8 text-[12px] text-foreground-subtle">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className="font-display text-xl sm:text-2xl">
-                  {item}
-                </span>
+                <div>
+                  <h3 className="font-display text-xl sm:text-2xl">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[15px] leading-relaxed text-foreground-muted">
+                    {item.detail}
+                  </p>
+                </div>
               </li>
             ))}
           </ul>
         </Container>
       </section>
 
-      <section className="border-t border-border/70 py-24 sm:py-32">
+      <section className="border-t border-border/70 py-14 sm:py-20">
         <Container>
           <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-foreground-subtle">
             Experience
           </p>
           <h2 className="mt-3 font-display text-3xl">
-            Selected products
+            Selected work
           </h2>
-          <ul className="mt-14">
+          <ul className="mt-8 sm:mt-10">
             {experienceHighlights.map((item) => (
               <li
                 key={item.title}
-                className="grid gap-4 border-t border-border/80 py-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14"
+                className="grid gap-3 border-t border-border/80 py-7 sm:gap-4 sm:py-7 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14"
               >
                 <h3 className="font-display text-2xl sm:text-3xl">
                   {item.title}
@@ -153,24 +179,32 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="ink-band py-28 sm:py-36">
+      <section className="ink-band py-16 sm:py-24">
         <Container>
           <div className="mx-auto max-w-xl text-center">
             <h2 className="font-display text-4xl text-ink-fg">
-              Let&apos;s talk
+              Let&apos;s talk about your project
             </h2>
             <p className="mt-4 text-base text-ink-fg/60">
-              Looking for reliable engineering help? I&apos;d be glad to hear
-              what you&apos;re working on.
+              If you need a thoughtful development partner for a SaaS product,
+              internal tool, or business website, I would be glad to hear what
+              you are working on.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <ButtonLink
-                href={`mailto:${siteConfig.email}`}
-                external
+                href={`mailto:${siteConfig.email}?subject=Project inquiry`}
                 className="!bg-ink-fg !text-ink hover:!bg-ink-fg/90"
               >
-                Email me
+                Discuss a project
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </ButtonLink>
+              <ButtonLink
+                href={siteConfig.whatsAppUrl}
+                variant="secondary"
+                external
+                className="!border-ink-fg/20 !bg-transparent !text-ink-fg hover:!border-ink-fg/50"
+              >
+                WhatsApp
               </ButtonLink>
               <ButtonLink
                 href={siteConfig.linkedIn}
@@ -188,6 +222,16 @@ export default function AboutPage() {
                 showIcon={false}
               >
                 {siteConfig.email}
+              </ExternalLink>
+              <span className="mx-2 text-ink-fg/25" aria-hidden>
+                ·
+              </span>
+              <ExternalLink
+                href={siteConfig.whatsAppUrl}
+                className="text-ink-fg/40 hover:text-ink-fg"
+                showIcon={false}
+              >
+                {siteConfig.phone}
               </ExternalLink>
             </p>
           </div>

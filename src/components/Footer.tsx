@@ -26,6 +26,11 @@ export function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/#services" className="hover:text-foreground">
+                Services
+              </Link>
+            </li>
+            <li>
               <Link href="/#packages" className="hover:text-foreground">
                 Packages
               </Link>
@@ -47,6 +52,15 @@ export function Footer() {
                 showIcon={false}
               >
                 Email
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink
+                href={siteConfig.whatsAppUrl}
+                className="text-foreground-muted"
+                showIcon={false}
+              >
+                WhatsApp
               </ExternalLink>
             </li>
             <li>

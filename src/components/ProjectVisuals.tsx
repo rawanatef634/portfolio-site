@@ -71,7 +71,7 @@ export function ProjectVisuals({
           alt={cover.alt}
           width={1920}
           height={870}
-          quality={95}
+          quality={85}
           priority={priority}
           sizes="(min-width: 1280px) 1120px, 100vw"
           className="h-auto w-full transition-transform duration-700 ease-out group-hover/media:scale-[1.01]"
@@ -108,7 +108,7 @@ export function ProjectVisuals({
                           alt={image.alt}
                           width={1920}
                           height={870}
-                          quality={95}
+                          quality={75}
                           sizes={
                             fullWidth
                               ? "(min-width: 1280px) 1120px, 100vw"
@@ -185,7 +185,7 @@ export function ProjectVisuals({
                 alt={current.alt}
                 width={1920}
                 height={870}
-                quality={95}
+                quality={85}
                 sizes="90vw"
                 className="h-auto w-full"
                 priority

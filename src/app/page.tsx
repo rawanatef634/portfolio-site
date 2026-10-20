@@ -9,41 +9,50 @@ import { Reveal } from "@/components/Reveal";
 import { ServicePackages } from "@/components/ServicePackages";
 import { Testimonials } from "@/components/Testimonials";
 import { siteConfig } from "@/config/site";
+import { testimonials } from "@/data/testimonials";
 import { getFeaturedProjects, getVisibleProjects } from "@/lib/projects";
 
-const reasons = [
+const services = [
   {
-    title: "End-to-end ownership",
+    title: "SaaS & product development",
     description:
-      "From product definition to shipped UI and handoff notes, not just tickets in isolation.",
+      "Build the core features of a product, improve existing workflows, and leave a foundation your team can extend.",
   },
   {
-    title: "Live products, real constraints",
+    title: "Dashboards & internal tools",
     description:
-      "Founder-built SaaS and commercial client sites that are online and used today.",
+      "Replace cumbersome spreadsheets and manual processes with clearer tools for managing data and day-to-day operations.",
   },
   {
-    title: "Clear working rhythm",
+    title: "Business websites",
     description:
-      "Scoped milestones, visible progress, and decisions you can review before the next step.",
+      "Present a company professionally so visitors understand what you offer and how to get in touch.",
+  },
+  {
+    title: "Improvements & integrations",
+    description:
+      "Strengthen an existing React or Next.js app, connect APIs, and refine the pieces that slow your team down, without an unnecessary rewrite.",
   },
 ] as const;
 
 const processSteps = [
   {
     step: "01",
-    title: "Scope",
-    description: "Clarify goals, constraints, and what done looks like.",
+    title: "Understand",
+    description:
+      "Clarify the problem, constraints, and what a useful outcome looks like before writing code.",
   },
   {
     step: "02",
     title: "Build",
-    description: "Ship in milestones you can review and adjust.",
+    description:
+      "Ship in reviewable milestones so you can steer the work as it takes shape.",
   },
   {
     step: "03",
     title: "Handoff",
-    description: "Clean structure and notes so your team keeps moving.",
+    description:
+      "Leave clean structure and notes so you or your team can keep building confidently.",
   },
 ] as const;
 
@@ -53,6 +62,7 @@ export default function HomePage() {
     (project) => project.website && !project.comingSoon,
   );
   const heroFeatured = featured[0] ?? null;
+  const showTestimonials = testimonials.length > 0;
 
   return (
     <>
@@ -99,7 +109,8 @@ export default function HomePage() {
               Selected projects
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground-muted sm:text-base">
-              A focused look at live products. The full archive is on{" "}
+              Live products and client work, with enough detail to understand
+              the problem and what was built. More on{" "}
               <Link
                 href="/projects"
                 className="underline-grow text-foreground"
@@ -125,38 +136,43 @@ export default function HomePage() {
       </section>
 
       <section
-        aria-labelledby="why-heading"
+        id="services"
+        aria-labelledby="services-heading"
         className="border-t border-border/60 py-28 sm:py-36"
       >
         <Container width="wide">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground-subtle">
-              Why hire me
+              Services
             </p>
             <h2
-              id="why-heading"
+              id="services-heading"
               className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
             >
-              Built to reduce risk on the build
+              What I can help you with
             </h2>
+            <p className="mt-4 text-[15px] leading-relaxed text-foreground-muted sm:text-base">
+              Focused on practical software for businesses and founders, not a
+              laundry list of every framework.
+            </p>
           </div>
 
-          <ul className="mt-14 grid gap-10 sm:mt-16 sm:grid-cols-3 sm:gap-8 lg:gap-12">
-            {reasons.map((reason, index) => (
+          <ul className="mt-14 grid gap-10 sm:mt-16 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:gap-x-14">
+            {services.map((service, index) => (
               <Reveal
-                key={reason.title}
+                key={service.title}
                 as="li"
-                delay={index * 60}
-                className="text-center sm:text-left"
+                delay={index * 50}
+                className="text-left"
               >
                 <p className="text-[12px] tracking-[0.14em] text-foreground-subtle">
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <h3 className="mt-4 font-display text-2xl sm:text-[1.65rem]">
-                  {reason.title}
+                  {service.title}
                 </h3>
                 <p className="mt-3 text-[15px] leading-relaxed text-foreground-muted">
-                  {reason.description}
+                  {service.description}
                 </p>
               </Reveal>
             ))}
@@ -164,26 +180,30 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section
-        aria-labelledby="testimonials-heading"
-        className="border-t border-border/60 py-28 sm:py-36"
-      >
-        <Container width="wide">
-          <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
-            <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground-subtle">
-              Clients
-            </p>
-            <h2
-              id="testimonials-heading"
-              className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
-            >
-              What collaborators say
-            </h2>
-          </div>
+      {showTestimonials ? (
+        <section
+          aria-labelledby="testimonials-heading"
+          className="border-t border-border/60 py-28 sm:py-36"
+        >
+          <Container width="wide">
+            <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-14">
+              <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground-subtle">
+                Clients
+              </p>
+              <h2
+                id="testimonials-heading"
+                className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
+              >
+                What clients say
+              </h2>
+            </div>
+          </Container>
 
-          <Testimonials />
-        </Container>
-      </section>
+          <div className="mt-2">
+            <Testimonials />
+          </div>
+        </section>
+      ) : null}
 
       <section
         aria-labelledby="process-heading"
@@ -198,7 +218,7 @@ export default function HomePage() {
               id="process-heading"
               className="mt-3 font-display text-3xl text-ink-fg sm:text-4xl lg:text-[2.85rem]"
             >
-              Clear from first call to handoff
+              How engagements usually run
             </h2>
           </div>
 
@@ -233,17 +253,20 @@ export default function HomePage() {
         <Container width="wide">
           <div className="mx-auto max-w-2xl text-center">
             <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-foreground-subtle">
-              Packages
+              Ways to start
             </p>
             <h2
               id="packages-heading"
               className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
             >
-              Fixed-price ways to start
+              Clear packages for common projects
             </h2>
             <p className="mt-4 text-[15px] leading-relaxed text-foreground-muted sm:text-base">
-              Pick a package, email to order. Scope stays written, with no surprise
-              invoices mid-build.
+              Fixed prices apply to a written scope, not an open backlog.
+              Custom Build starts from the listed figure and is quoted after we
+              define what is in and out. It is a first phase or custom
+              engagement, not a full SaaS price. If none of these fit, email a
+              short brief for a fixed quote or a clear no.
             </p>
           </div>
 
@@ -267,21 +290,23 @@ export default function HomePage() {
                 id="about-heading"
                 className="mt-3 font-display text-3xl sm:text-4xl lg:text-[2.85rem]"
               >
-                Product-minded engineering
+                How I work with clients
               </h2>
             </div>
             <div>
               <p className="text-base leading-relaxed text-foreground-muted sm:text-[1.05rem]">
-                I work across SaaS platforms, client web apps, and internal
-                tools · including commercial delivery and a product I built end
-                to end. I care about maintainable systems and decisions
-                grounded in real needs.
+                I start from what the software needs to do for your business,
+                ask the questions that surface constraints early, and make
+                technical choices that stay maintainable. Whether that is a
+                SaaS feature set, an internal dashboard, or a business website,
+                the aim is the same: something your team can use and keep
+                improving without unnecessary rewrites.
               </p>
               <Link
                 href="/about"
                 className="mt-8 inline-flex items-center gap-1.5 text-[15px] font-medium text-foreground transition-opacity hover:opacity-55"
               >
-                More about me
+                More about how I work
                 <ArrowRight className="size-3.5" aria-hidden="true" />
               </Link>
             </div>
@@ -303,19 +328,27 @@ export default function HomePage() {
               id="contact-heading"
               className="mt-4 font-display text-3xl text-ink-fg sm:text-4xl lg:text-[2.85rem]"
             >
-              Ready when you are
+              Tell me what you are building
             </h2>
             <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-ink-fg/55">
-              Share what you&apos;re building. I&apos;ll reply with a clear take
-              on fit, timing, and next steps. No fluff.
+              A short note about the project, timeline, and any links is enough.
+              I will reply with a clear view on fit, timing, and next steps.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3.5">
               <ButtonLink
                 href={`mailto:${siteConfig.email}?subject=Project inquiry`}
                 className="!bg-ink-fg !text-ink hover:!bg-ink-fg/90"
               >
-                Email me
+                Discuss a project
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
+              </ButtonLink>
+              <ButtonLink
+                href={siteConfig.whatsAppUrl}
+                variant="secondary"
+                external
+                className="!border-ink-fg/25 !bg-transparent !text-ink-fg hover:!border-ink-fg/55"
+              >
+                WhatsApp
               </ButtonLink>
               <ButtonLink
                 href={siteConfig.linkedIn}
@@ -328,6 +361,17 @@ export default function HomePage() {
             </div>
             <p className="mt-8 text-sm text-ink-fg/40">
               {siteConfig.email}
+              <span className="mx-2 text-ink-fg/25" aria-hidden>
+                ·
+              </span>
+              <a
+                href={siteConfig.whatsAppUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink-fg/40 transition-colors hover:text-ink-fg"
+              >
+                {siteConfig.phone}
+              </a>
             </p>
           </div>
         </Container>

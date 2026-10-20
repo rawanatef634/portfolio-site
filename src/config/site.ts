@@ -2,30 +2,40 @@
  * Site-wide configuration.
  * Update these values before deploying · they drive SEO, contact links, and availability.
  */
+
+/** Primary public origin (no trailing slash). */
+export const PRODUCTION_SITE_URL = "https://rawanatef.me";
+
 export const siteConfig = {
   /** Display name shown in the header and metadata */
   name: "Rawan Atef",
 
   /** Short professional title used in SEO and structured data */
-  title: "Full-Stack Software Engineer",
+  title: "Full-Stack Developer",
 
   /** Primary email for contact CTAs */
   email: "atefrawan012@gmail.com",
+
+  /** WhatsApp / mobile (E.164 without + for wa.me) */
+  phone: "+201095584304",
+  whatsAppUrl: "https://wa.me/201095584304",
 
   /** Full LinkedIn profile URL */
   linkedIn: "https://www.linkedin.com/in/rawanatef/",
 
   /**
    * Canonical site origin (no trailing slash).
-   * Prefer NEXT_PUBLIC_SITE_URL in production; this is the local fallback.
+   * Prefer NEXT_PUBLIC_SITE_URL everywhere; production falls back to rawanatef.me.
    */
   url:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000",
+    (process.env.VERCEL_ENV === "production"
+      ? PRODUCTION_SITE_URL
+      : "http://localhost:3000"),
 
   /** Default Open Graph / social description */
   description:
-    "Full-stack software engineer building SaaS products, internal tools, dashboards, and commercial websites for founders and businesses.",
+    "Full-stack developer building SaaS products, internal tools, dashboards, and business websites for founders and growing companies.",
 
   /**
    * Availability indicator on the homepage.
@@ -33,7 +43,7 @@ export const siteConfig = {
    */
   availability: {
     show: true,
-    message: "Open to freelance & contract projects",
+    message: "Available for freelance projects",
   },
 
   /** Optional location string for structured data / about copy */

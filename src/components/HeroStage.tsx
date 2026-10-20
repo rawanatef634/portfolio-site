@@ -38,29 +38,31 @@ export function HeroStage({ featured }: HeroStageProps) {
               {siteConfig.name}
             </p>
 
-            <h1 className="fade-up fade-up-2 mt-6 text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl">
-              Full-stack engineer for products that need to ship.
+            <h1 className="fade-up fade-up-2 mt-6 text-xl font-medium tracking-[-0.01em] text-foreground sm:text-2xl lg:text-[1.65rem] lg:leading-snug">
+              I build web applications that make businesses easier to run.
             </h1>
 
             <p className="fade-up fade-up-3 mt-6 max-w-md text-base leading-relaxed text-foreground-muted sm:text-lg">
-              I design and build SaaS, internal tools, and commercial websites
-              with clear scope, steady milestones, and a clean handoff.
+              SaaS products, internal tools, dashboards, and business websites
+              for founders and teams who need software that is clear to use and
+              practical to maintain. I take time to understand the problem,
+              then build what actually helps.
             </p>
 
             <div className="fade-up fade-up-4 mt-10 flex flex-wrap items-center gap-3.5">
               <ButtonLink
                 href={`mailto:${siteConfig.email}?subject=Project inquiry`}
               >
-                Hire me
+                Discuss a project
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
               </ButtonLink>
               <ButtonLink href="#work" variant="secondary">
-                See the work
+                View selected work
               </ButtonLink>
             </div>
 
             <p className="fade-up fade-up-4 mt-9 text-[13px] leading-relaxed text-foreground-subtle">
-              Founder-built SaaS · Live client products · Remote-friendly
+              Founder-built SaaS · Live client projects · Remote-friendly
             </p>
           </div>
 
@@ -75,7 +77,7 @@ export function HeroStage({ featured }: HeroStageProps) {
                   alt={featured.coverImage.alt}
                   width={1910}
                   height={860}
-                  quality={95}
+                  quality={85}
                   priority
                   sizes="(min-width: 1024px) 560px, 92vw"
                   className="h-auto w-full"
