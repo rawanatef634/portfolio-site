@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
@@ -338,6 +338,8 @@ export default function HomePage() {
               <ButtonLink
                 href={`mailto:${siteConfig.email}?subject=Project inquiry`}
                 className="!bg-ink-fg !text-ink hover:!bg-ink-fg/90"
+                trackingEventName="contact_cta_clicked"
+                trackingPayload={{ location: "home_contact", channel: "email" }}
               >
                 Discuss a project
                 <ArrowUpRight className="size-3.5" aria-hidden="true" />
