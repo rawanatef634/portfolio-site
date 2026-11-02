@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
+import { captureError, event } from "@heronsignal/web";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -37,6 +38,17 @@ export function Header() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
+
+  const handleDiscussClick = () => {
+    try {
+      event("contact_cta_clicked", {
+        location: "header",
+        cta: "discuss_project",
+      });
+    } catch (error) {
+      captureError(error);
+    }
+  };
 
   return (
     <header className="pointer-events-none fixed inset-x-0 top-0 z-50 flex flex-col items-center p-3 sm:p-4">
@@ -85,6 +97,7 @@ export function Header() {
         <a
           href={`mailto:${siteConfig.email}?subject=Project inquiry`}
           className="ml-0.5 inline-flex items-center gap-1 rounded-full bg-ink px-3.5 py-1.5 text-sm font-medium text-ink-fg transition-transform duration-300 hover:-translate-y-px"
+          onClick={handleDiscussClick}
         >
           Discuss
           <ArrowUpRight className="size-3.5 opacity-70" aria-hidden="true" />
