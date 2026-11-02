@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PersonJsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/config/site";
+import { HeronSignalProvider } from "./heronsignal-provider";
 import "./globals.css";
 
 const ibmPlexSans = IBM_Plex_Sans({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${ibmPlexSans.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans text-foreground">
+        <HeronSignalProvider />
         <PersonJsonLd />
         <a href="#main-content" className="skip-link">
           Skip to content
