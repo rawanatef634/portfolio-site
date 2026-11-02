@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useId, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { event } from "@heronsignal/web";
 import { siteConfig } from "@/config/site";
 
 const navItems = [
@@ -85,6 +86,9 @@ export function Header() {
         <a
           href={`mailto:${siteConfig.email}?subject=Project inquiry`}
           className="ml-0.5 inline-flex items-center gap-1 rounded-full bg-ink px-3.5 py-1.5 text-sm font-medium text-ink-fg transition-transform duration-300 hover:-translate-y-px"
+          onClick={() => {
+            event("contact_cta_clicked", { location: "header", cta: "discuss" });
+          }}
         >
           Discuss
           <ArrowUpRight className="size-3.5 opacity-70" aria-hidden="true" />
