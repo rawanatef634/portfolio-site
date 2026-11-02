@@ -1,3 +1,6 @@
+'use client';
+
+import { event } from "@heronsignal/web";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -9,6 +12,8 @@ type ButtonLinkProps = {
   variant?: Variant;
   className?: string;
   external?: boolean;
+  trackingEventName?: string;
+  trackingPayload?: Record<string, string>;
 };
 
 const variants: Record<Variant, string> = {
@@ -26,8 +31,15 @@ export function ButtonLink({
   variant = "primary",
   className = "",
   external = false,
+  trackingEventName,
+  trackingPayload,
 }: ButtonLinkProps) {
   const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-medium transition-all duration-300 ease-out ${variants[variant]} ${className}`;
+
+  const handleClick = () => {
+    if (!trackingEventName) return;
+    event(trackingEventName, trackingPayload);
+  };
 
   if (external) {
     const isWebLink = href.startsWith("http://") || href.startsWith("https://");
@@ -36,6 +48,7 @@ export function ButtonLink({
       <a
         href={href}
         className={classes}
+        onClick={handleClick}
         {...(isWebLink
           ? { target: "_blank", rel: "noopener noreferrer" }
           : {})}
@@ -46,7 +59,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={href} className={classes} onClick={handleClick}>
       {children}
     </Link>
   );
