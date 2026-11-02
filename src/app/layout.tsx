@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Newsreader } from "next/font/google";
+import { HeronSignalProvider } from "@/app/heronsignal-provider";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { PersonJsonLd } from "@/components/JsonLd";
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${ibmPlexSans.variable} ${newsreader.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans text-foreground">
+        <HeronSignalProvider />
         <PersonJsonLd />
         <a href="#main-content" className="skip-link">
           Skip to content
